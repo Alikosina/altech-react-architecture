@@ -3,21 +3,21 @@ import { ITask } from "../../../../../types/ITask";
 import { Button } from "../../../../shared/Button";
 
 import styles from "./TaskItem.module.scss";
-
-interface ITaskItemProps extends ITask {
-  onDelete: (id: number) => void;
-}
+import { ITaskItemProps } from "./TaskItem.types";
 
 export const TaskItem: React.FC<ITaskItemProps> = ({
   id,
   name,
   difficulty,
   onDelete,
+  onNameClick,
 }) => {
   return (
     <div className={styles.container}>
       <div>
-        <span className={styles.name}>Название: {name}</span>
+        <span onClick={() => onNameClick(id)} className={styles.name}>
+          Название: {name}
+        </span>
         <span className={styles.difficulty}>Сложность: {difficulty}</span>
       </div>
       <div>
