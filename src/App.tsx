@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css';
-import { MainPage } from './components/pages/MainPage';
-import { TaskDetailPage } from './components/pages/TaskDetailPage';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { MainPage } from "./components/pages/MainPage";
+import { TaskDetailPage } from "./components/pages/TaskDetailPage";
 
 function App() {
   return (
-   <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='/detail' element={<TaskDetailPage />} />
+        <Route path="/" element={<MainPage />} />
+        <Route path="/task/:id" element={<TaskDetailPage />} />
       </Routes>
-   </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
